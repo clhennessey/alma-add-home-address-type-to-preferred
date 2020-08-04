@@ -16,6 +16,8 @@ Known errors:
 
 3. Still need to add an error output file so you have a list of IDs that failed to look at more closely.
 
+4. If you update the same record several times, it seems to move the "start date" of the address earlier by one day each time you re-add it. This really only comes up during testing when you are re-adding the same record and would not happen in real life.
+
 This program is based on this code presented at ELUNA Developer's Day Workshop by Jeremy Hobbs, linked here: https://github.com/MrJeremyHobbs/ELUNA-2019-Dev-Days-Alma-Course
 
 Requirements: Python 3.x, modules: tkinter, requests, xmltodict
