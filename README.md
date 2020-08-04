@@ -25,3 +25,5 @@ Questions, comments, changes? Contact Christina Hennessey, Systems Librarian at 
 ![showing home in contact info](showing_home_in_contact_info.jpg)
 
 ![showing home and preferred](showing_home_and_preferred.jpg)
+
+![update_via_user_api_added_home](update_via_user_api_added_home.jpg)
