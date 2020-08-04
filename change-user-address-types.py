@@ -25,10 +25,14 @@ def main(*args):
     print("user file name = ", user_file_name)
     gui.clear_user()
     
-    # need to handle file not there
-    with open(user_file_name, 'r') as file_object:
-        user_ids_from_file = file_object.read().splitlines()
-        print("Here are the lines in the file:", user_ids_from_file)
+    # open the file, assumes in the same directory
+    try: 
+        with open(user_file_name, 'r') as file_object:
+            user_ids_from_file = file_object.read().splitlines()
+            print("Here are the lines in the file:", user_ids_from_file)
+    except IOError:
+        gui.msgbox(user_file_name, "This file name does not exist")
+        return
     
     zcount=0
     for z in user_ids_from_file:
