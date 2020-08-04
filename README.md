@@ -13,3 +13,7 @@ Requirements: Python 3.x, modules: requests, xmltodict
 Questions, comments, changes? Contact Christina Hennessey, Systems Librarian at California State University, Northridge christina.hennessey@csun.edu
 
 ![program image with filename](program_image_with_filename.jpg)
+
+![showing home in contact info](showing_home_in_contact_info.jpg)
+
+![showing home and preferred](showing_home_and_preferred.jpg)
