@@ -14,6 +14,8 @@ Known errors:
 
 2. The file with the IDs must be in the current directory you are working in.
 
+3. Still need to add an error output file so you have a list of IDs that failed to look at more closely.
+
 This program is based on this code presented at ELUNA Developer's Day Workshop by Jeremy Hobbs, linked here: https://github.com/MrJeremyHobbs/ELUNA-2019-Dev-Days-Alma-Course
 
 Requirements: Python 3.x, modules: tkinter, requests, xmltodict
