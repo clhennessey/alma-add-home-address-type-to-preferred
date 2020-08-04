@@ -12,4 +12,3 @@ Requirements: Python 3.x, modules: requests, xmltodict
 
 Questions, comments, changes? Contact Christina Hennessey, Systems Librarian at California State University, Northridge christina.hennessey@csun.edu
 
-![program image with filename](program image with filename.jpg)
