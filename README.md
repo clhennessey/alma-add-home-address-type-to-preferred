@@ -6,6 +6,7 @@ Replace api_key in the config.ini with your API key that allows: User-Production
 This program works on a plain text file of primary user IDs, each on a separate line. The file must be in the directory where you are running the code.
 
 An error file named "error.txt" is written to the same directory where you run the code. Errors with particular IDs will not stop the program. Errors may look like this:
+
 <i>User 12345 had this error: Mandatory field is missing: user_role parameters [ServiceUnit] for role number 214
   
 User 54321 had this error: Request cannot contain two identifiers with the same value (types are: primary_id, BARCODE, value is 567567567).</i>
