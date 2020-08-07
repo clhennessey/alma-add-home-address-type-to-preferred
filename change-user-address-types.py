@@ -15,24 +15,38 @@ apikey   = config['misc']['apikey']
 # main program ################################################################
 def main(*args):
     
+    # open the file to write errors, assumes in the same directory
+    error_file_object = open("error.txt","w")
+    try: 
+        error_file_object.write("Beginning of error file for change-user-address-types program.\n")
+    except IOError:
+        gui.msgbox(error_file_object, "Could not write the error file in the current path")
+        error_file_object.close()
+        return
+    
     # user ID file
     user_file_name = gui.get_user()
     if user_file_name == "":
+        error_file_object.write("Bad user file name: "+user_file_name)
         gui.msgbox(user_file_name, "Bad user file name")
+        error_file_object.close()
         return
     # strip leading and trailing spaces
     user_file_name = user_file_name.strip()
     print("user file name = ", user_file_name)
     gui.clear_user()
     
-    # open the file, assumes in the same directory
+    # open the file to read, assumes in the same directory
     try: 
         with open(user_file_name, 'r') as file_object:
             user_ids_from_file = file_object.read().splitlines()
-            print("Here are the lines in the file:", user_ids_from_file)
+ #           print("Here are the lines in the file:", user_ids_from_file)
     except IOError:
-        gui.msgbox(user_file_name, "This file name does not exist")
+        error_file_object.write("File name does not exist in the current path: "+user_file_name)
+        gui.msgbox(user_file_name, "This file name does not exist in the current path")
+        error_file_object.close()
         return
+     
     
     zcount=0
     for z in user_ids_from_file:
@@ -51,7 +65,19 @@ def main(*args):
         errors_exist = check_errors(r)
         if errors_exist[0] == True:
             error = errors_exist[1]
-            gui.msgbox(user, error)
+            print("error was:", error)
+            if error.startswith("API-key not defined"):
+                print("problem with API Key, write this to an error file\n")
+                error_file_object.write("Problem with API Key: "+apikey)
+                gui.msgbox(user, error)
+                error_file_object.close()
+                return
+            if "not found" in error:
+                print("There was an error with user",user,"\n")
+            # not sure what other errors we might find here so check this    
+            error_file_object.write(error+"\n")
+ 
+    #        gui.msgbox(user, error)
             continue
         
         # parse user record. 
@@ -250,15 +276,17 @@ def main(*args):
                new_user_xml = xmltodict.unparse(user_dict)
                #print(new_user_xml)
       
-               # comment out the next line if you don't want to write anything
+               # comment out the next line if you don't want to save anything to the user record
                r = putXML("https://api-na.hosted.exlibrisgroup.com/almaws/v1/users/"+user+"?user_id_type=all_unique&apikey="+apikey, new_user_xml)
             
                # check for errors
                errors_exist = check_errors(r)
                if errors_exist[0] == True:
+                   print("there was an error in the putXML for user =", user)
                    error = errors_exist[1]
-                   gui.msgbox(user, error)
-                   return
+                   error_file_object.write("User "+user+" had this error: "+error+"\n")
+     #              gui.msgbox(user, error)
+                   continue
             
                # finish
                gui.update_status_success(primaryID, firstname, lastname, "UPDATED")
@@ -266,6 +294,8 @@ def main(*args):
                gui.update_status_success(primaryID, firstname, lastname, "RETAINED")
     #end of text loop here
     print("we are done processing the file\n")
+    error_file_object.write("The program has finished processing the file.")
+    error_file_object.close()
 # end of main here
          
  
