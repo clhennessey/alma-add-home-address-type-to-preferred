@@ -7,6 +7,7 @@ This program works on a plain text file of primary user IDs, each on a separate 
 
 An error file named "error.txt" is written to the same directory where you run the code. Errors with particular IDs will not stop the program. Errors may look like this:
 <i>User 12345 had this error: Mandatory field is missing: user_role parameters [ServiceUnit] for role number 214
+  
 User 54321 had this error: Request cannot contain two identifiers with the same value (types are: primary_id, BARCODE, value is 567567567).</i>
 
 Any records that have the 'home' address type missing in the preferred address will have that type added to the preferred address. The user history will indicate that the record was updated by "exl_api". Other non-preferred addresses in the same record will not be updated. If "home" already exists in the preferred address record, the record will be skipped and nothing will be written. 
