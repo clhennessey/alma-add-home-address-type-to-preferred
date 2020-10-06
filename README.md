@@ -3,7 +3,7 @@ To get around a problem with Alma home delivery, add the home address type to pr
 
 This program was presented at the Ex Libris Northeast Users Group conference (ENUG) on Tuesday, October 6, 2020: http://e-nug.org/enug-2020/
 
-Link to Powerpoint slides (to come)
+Link to Powerpoint slides: https://mycsun.box.com/s/oiu35e6dvnmhdnx9sm580cl17e41jqaj
 
 Link to video of presentation (to come).
 
