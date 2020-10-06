@@ -2,7 +2,9 @@
 To get around a problem with Alma home delivery, add the home address type to preferred address records if it is not there.
 
 This program was presented at the Ex Libris Northeast Users Group conference (ENUG) on Tuesday, October 6, 2020: http://e-nug.org/enug-2020/
+
 Link to Powerpoint slides (to come)
+
 Link to video of presentation (to come).
 
 Replace api_key in the config.ini with your API key that allows: User-Production-Read/Write. If you are not familiar with how to create an API Key for Ex Libris' Alma, you can read more about it here: https://developers.exlibrisgroup.com/alma/apis/
