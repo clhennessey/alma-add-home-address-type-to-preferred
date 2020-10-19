@@ -5,7 +5,7 @@ This program was presented at the Ex Libris Northeast Users Group conference (EN
 
 Link to Powerpoint slides: https://mycsun.box.com/s/oiu35e6dvnmhdnx9sm580cl17e41jqaj
 
-Link to video of presentation (to come).
+Link to video & transcript of presentation: http://e-nug.org/enug-2020/summary-schedule-2020/
 
 Replace api_key in the config.ini with your API key that allows: User-Production-Read/Write. If you are not familiar with how to create an API Key for Ex Libris' Alma, you can read more about it here: https://developers.exlibrisgroup.com/alma/apis/
 
